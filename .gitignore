@@ -1,0 +1,10 @@
+.vscode/
+include/SDL2/*
+lib/*
+bin/*
+*.dll
+!README
+!README.*
+*.exe
+tests/*
+.editorconfig

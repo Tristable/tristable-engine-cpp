@@ -1,0 +1,1 @@
+add SDL2, SDL_image, and SDL_ttf lib files here.
