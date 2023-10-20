@@ -23,7 +23,6 @@ void tse::closeCachedFont(std::string name) {
 }
 
 void tse::drawText(Vector2i position, std::string text, std::string font, SDL_Color color) {
-    std::cout << !!Renderer::running->fontCache[font] << std::endl;
     SDL_Surface* surface = TTF_RenderUTF8_Blended(Renderer::running->fontCache[font], text.c_str(), color);
 
     if (!surface) {
@@ -35,8 +34,7 @@ void tse::drawText(Vector2i position, std::string text, std::string font, SDL_Co
     SDL_Rect rect = { position.x, position.y, surface->w, surface->h };
 
     SDL_RenderCopy(EngineInstance::running->sdlRenderer, texture, NULL, &rect);
-    std::cout << "hi\n";
 
     SDL_DestroyTexture(texture);
-    std::cout << "hi\n";
+    SDL_FreeSurface(surface);
 }

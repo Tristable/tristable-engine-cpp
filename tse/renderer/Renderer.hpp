@@ -17,6 +17,8 @@ namespace tse {
     };
 
     void createSDLRenderer();
+
+    void setSDLDrawColor(SDL_Color color);
 }
 
 #endif

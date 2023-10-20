@@ -26,3 +26,7 @@ void tse::createSDLRenderer() {
         return;
     }
 }
+
+void tse::setSDLDrawColor(SDL_Color color) {
+    SDL_SetRenderDrawColor(EngineInstance::running->sdlRenderer, color.r, color.g, color.b, color.a);
+}

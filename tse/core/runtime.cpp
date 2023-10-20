@@ -28,12 +28,15 @@ void tse::startRuntime(void (*runtime)(double), void (*eventHandler)(SDL_Event*)
             
             eventHandler(&e);
         }
+
+        for (int i = 0; i < ei->lastDeltaTimes.size(); i++) if (i != ei->lastDeltaTimes.size() - 1) ei->lastDeltaTimes[i] = ei->lastDeltaTimes[i + 1];
+        ei->lastDeltaTimes[ei->lastDeltaTimes.size() - 1] = ei->deltaTime;
         
-        SDL_RenderClear(EngineInstance::running->sdlRenderer);
+        SDL_RenderClear(ei->sdlRenderer);
 
         runtime(ei->deltaTime);
 
-        SDL_SetRenderDrawColor(EngineInstance::running->sdlRenderer, 0, 0, 0, 255);
-        SDL_RenderPresent(EngineInstance::running->sdlRenderer);
+        SDL_SetRenderDrawColor(ei->sdlRenderer, 0, 0, 0, 255);
+        SDL_RenderPresent(ei->sdlRenderer);
     }
 }
