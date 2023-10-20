@@ -7,9 +7,9 @@
 namespace tse {
     void cacheFont(std::string name, std::string path, int size);
 
-    void closeCachedFont(std::string name);
+    void deleteCachedFont(std::string name);
 
-    void drawText(Vector2i position, std::string text, std::string font, SDL_Color color);
+    void drawText(Vector2i* position, std::string text, std::string font, SDL_Color color);
 }
 
 #endif

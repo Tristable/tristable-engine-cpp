@@ -10,6 +10,8 @@ namespace tse {
         public:
             static Renderer* running;
             std::map<std::string, TTF_Font*> fontCache;
+            std::map<std::string, SDL_Texture*> textureCache;
+            std::string defaultFont;
 
             Renderer();
 

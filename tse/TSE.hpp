@@ -11,5 +11,6 @@
 #include "renderer/Renderer.hpp"
 #include "renderer/text.hpp"
 #include "renderer/rect.hpp"
+#include "renderer/texture.hpp"
 
 #endif

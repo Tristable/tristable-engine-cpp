@@ -1,8 +1,10 @@
 #include "runtime.hpp"
 #include "EngineInstance.hpp"
+#include "../renderer/text.hpp"
+#include "../renderer/Renderer.hpp"
 #include <chrono>
-#include <unistd.h>
 #include <iostream>
+#include <numeric>
 
 using namespace tse;
 
@@ -35,6 +37,13 @@ void tse::startRuntime(void (*runtime)(double), void (*eventHandler)(SDL_Event*)
         SDL_RenderClear(ei->sdlRenderer);
 
         runtime(ei->deltaTime);
+
+        if (ei->showFps) {
+            double avg = std::reduce(ei->lastDeltaTimes.begin(), ei->lastDeltaTimes.end()) / ei->lastDeltaTimes.size();
+
+            Vector2i textPos = { 0, 0 };
+            drawText(&textPos, "FPS: " + std::to_string(1.0 / avg), Renderer::running->defaultFont, { 255, 255, 255 });
+        }
 
         SDL_SetRenderDrawColor(ei->sdlRenderer, 0, 0, 0, 255);
         SDL_RenderPresent(ei->sdlRenderer);
