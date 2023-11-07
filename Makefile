@@ -6,3 +6,6 @@ test: $(files)
 	rm -f main.exe
 	g++ -Iinclude -Llib -o main $(testFiles) $(files) $(libs)
 	./main
+
+retest: ./main.exe
+	./main

@@ -15,7 +15,7 @@ void tse::startRuntime(void (*runtime)(double), void (*eventHandler)(SDL_Event*)
 
     while (ei->keepWindowOpen) {
         int64_t now = std::chrono::duration_cast<std::chrono::milliseconds>(system_clock::now().time_since_epoch()).count();
-        int64_t diff = now - ei->lastFrameTime;
+        int64_t diff = ei->lastFrameTime == 0 ? 0 : now - ei->lastFrameTime;
         ei->lastFrameTime = now;
         ei->deltaTime = double(diff) / 1000.0;
 
@@ -38,7 +38,7 @@ void tse::startRuntime(void (*runtime)(double), void (*eventHandler)(SDL_Event*)
 
         runtime(ei->deltaTime);
 
-        if (ei->showFps) {
+        if (ei->debug.showFps) {
             double avg = std::reduce(ei->lastDeltaTimes.begin(), ei->lastDeltaTimes.end()) / ei->lastDeltaTimes.size();
 
             Vector2i textPos = { 0, 0 };

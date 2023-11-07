@@ -4,6 +4,7 @@
 #include "../../include/SDL2/SDL.h"
 #include <string>
 #include "../math/Vector2.hpp"
+#include "DebugOptions.hpp"
 #include <vector>
 
 namespace tse {
@@ -18,8 +19,8 @@ namespace tse {
             bool keepWindowOpen = true;
             double deltaTime = 0;
             int64_t lastFrameTime = 0;
-            bool showFps = false;
             std::vector<double> lastDeltaTimes = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+            DebugOptions debug;
 
             EngineInstance(int width, int height, std::string title);
 

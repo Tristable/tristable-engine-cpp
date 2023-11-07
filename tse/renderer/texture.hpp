@@ -9,7 +9,7 @@ namespace tse {
 
     void deleteCachedTexture(std::string name);
 
-    void drawTexture(std::string texture, Rect2i* destination, Rect2i* source);
+    void drawTexture(std::string texture, Rect2i* destination, Rect2i* source, double rotationDeg);
 }
 
 #endif
