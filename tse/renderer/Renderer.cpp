@@ -1,7 +1,6 @@
 #include "../core/EngineInstance.hpp"
-#include "renderer.hpp"
+#include "Renderer.hpp"
 #include <iostream>
-#include "../../include/SDL2/SDL_image.h"
 
 #define IMG_INIT_ALL IMG_INIT_PNG | IMG_INIT_JPG | IMG_INIT_AVIF | IMG_INIT_JXL | IMG_INIT_TIF | IMG_INIT_WEBP
 

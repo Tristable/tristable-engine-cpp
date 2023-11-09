@@ -1,7 +1,7 @@
 #ifndef TSE_WINDOWINSTANCE_H
 #define TSE_WINDOWINSTANCE_H
 
-#include "../../include/SDL2/SDL.h"
+#include "../global.hpp"
 
 namespace tse {
     void createWindow();

@@ -1,5 +1,4 @@
 #include "texture.hpp"
-#include "../../include/SDL2/SDL_image.h"
 #include "../core/EngineInstance.hpp"
 #include "Renderer.hpp"
 #include "rect.hpp"
@@ -21,7 +20,7 @@ void tse::cacheTextureFromFile(std::string name, std::string path) {
 
 void tse::deleteCachedTexture(std::string name) {
     SDL_DestroyTexture(Renderer::running->textureCache[name]);
-    // TODO: remove the texture from the cache
+    Renderer::running->textureCache.erase(name);
 }
 
 void tse::drawTexture(std::string texture, Rect2i* destination, Rect2i* source, double rotationDeg) {

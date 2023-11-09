@@ -1,6 +1,5 @@
 #include "text.hpp"
-#include "../../include/SDL2/SDL_ttf.h"
-#include "renderer.hpp"
+#include "Renderer.hpp"
 #include "../core/EngineInstance.hpp"
 #include <iostream>
 
@@ -20,7 +19,7 @@ void tse::cacheFont(std::string name, std::string path, int size) {
 
 void tse::deleteCachedFont(std::string name) {
     TTF_CloseFont(Renderer::running->fontCache[name]);
-    // TODO: remove the font from the cache
+    Renderer::running->fontCache.erase(name);
 }
 
 void tse::drawText(Vector2i* position, std::string text, std::string font, SDL_Color color) {

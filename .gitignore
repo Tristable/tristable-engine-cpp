@@ -1,5 +1,5 @@
 .vscode/
-include/SDL2/*
+tse/SDL2/*
 lib/*
 bin/*
 *.dll

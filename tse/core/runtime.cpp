@@ -31,7 +31,7 @@ void tse::startRuntime(void (*runtime)(double), void (*eventHandler)(SDL_Event*)
             eventHandler(&e);
         }
 
-        for (int i = 0; i < ei->lastDeltaTimes.size(); i++) if (i != ei->lastDeltaTimes.size() - 1) ei->lastDeltaTimes[i] = ei->lastDeltaTimes[i + 1];
+        for (int i = 0; i < (int)ei->lastDeltaTimes.size(); i++) if (i != (int)ei->lastDeltaTimes.size() - 1) ei->lastDeltaTimes[i] = ei->lastDeltaTimes[i + 1];
         ei->lastDeltaTimes[ei->lastDeltaTimes.size() - 1] = ei->deltaTime;
         
         SDL_RenderClear(ei->sdlRenderer);

@@ -1,7 +1,7 @@
 #ifndef TSE_VECTOR2_H
 #define TSE_VECTOR2_H
 
-#include "../../include/SDL2/SDL.h"
+#include "../global.hpp"
 #include <string>
 
 namespace tse {

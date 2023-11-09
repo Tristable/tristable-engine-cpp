@@ -1,8 +1,7 @@
 #ifndef TSE_RENDERER_H
 #define TSE_RENDERER_H
 
-#include "../../include/SDL2/SDL.h"
-#include "../../include/SDL2/SDL_ttf.h"
+#include "../global.hpp"
 #include <map>
 
 namespace tse {

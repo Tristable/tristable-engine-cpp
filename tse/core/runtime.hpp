@@ -1,7 +1,7 @@
 #ifndef TSE_RUNTIME_H
 #define TSE_RUNTIME_H
 
-#include "../../include/SDL2/SDL.h"
+#include "../global.hpp"
 
 namespace tse {
     void startRuntime(void (*runtime)(double), void (*eventHandler)(SDL_Event*));

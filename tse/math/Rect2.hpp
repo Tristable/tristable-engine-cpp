@@ -1,7 +1,6 @@
 #ifndef TSE_RECT2_H
 #define TSE_RECT2_H
 
-#include "../../include/SDL2/SDL.h"
 #include "Vector2.hpp"
 
 namespace tse {

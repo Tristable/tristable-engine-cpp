@@ -1,7 +1,7 @@
 #ifndef TSE_ENGINEINSTANCE_H
 #define TSE_ENGINEINSTANCE_H
 
-#include "../../include/SDL2/SDL.h"
+#include "../global.hpp"
 #include <string>
 #include "../math/Vector2.hpp"
 #include "DebugOptions.hpp"
