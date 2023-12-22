@@ -1,0 +1,8 @@
+*.dll
+*.exe
+/test
+lib/*
+include/*
+!README
+!README.*
+/.vscode
