@@ -29,6 +29,9 @@ void WindowManager::start() {
         }
 
         window->clear();
+
+        for (std::function<void(double)> i : renderFunctions) i(1.0 / 60.0);
+
         window->display();
     }
 }
@@ -41,4 +44,8 @@ WindowManager::~WindowManager() {
 
 WindowManager* tse::getCurrentWindow() {
     return globalWindowInstance;
+}
+
+void WindowManager::onRender(std::function<void(double)> callback) {
+    renderFunctions.push_back(callback);
 }
