@@ -54,3 +54,7 @@ WindowManager* tse::getCurrentWindow() {
 void WindowManager::onRender(std::function<void(double)> callback) {
     renderFunctions.push_back(callback);
 }
+
+sf::RenderWindow* WindowManager::getWindow() {
+    return window;
+}

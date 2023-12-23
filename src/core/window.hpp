@@ -16,6 +16,7 @@ namespace tse {
 
             void start();
             void onRender(std::function<void(double)> callback);
+            sf::RenderWindow* getWindow();
     };
 
     WindowManager* getCurrentWindow();
