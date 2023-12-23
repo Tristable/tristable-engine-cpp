@@ -9,6 +9,8 @@ namespace tse {
             sf::RenderWindow* window;
             std::vector<std::function<void(double)>> renderFunctions;
         public:
+            sf::Clock* clock;
+
             WindowManager(std::string title);
             ~WindowManager();
 

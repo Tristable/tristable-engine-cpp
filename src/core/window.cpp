@@ -13,6 +13,10 @@ WindowManager::WindowManager(std::string title) : window(nullptr) {
 
     window = new sf::RenderWindow(sf::VideoMode(1280, 720), title);
     globalWindowInstance = this;
+
+    clock = new sf::Clock();
+
+    window->setVerticalSyncEnabled(true);
 }
 
 void WindowManager::start() {
@@ -38,6 +42,7 @@ void WindowManager::start() {
 
 WindowManager::~WindowManager() {
     delete window;
+    delete clock;
 
     globalWindowInstance = nullptr;
 }
