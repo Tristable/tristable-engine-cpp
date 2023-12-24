@@ -5,13 +5,13 @@ using namespace tse;
 
 WindowManager* globalWindowInstance = nullptr;
 
-WindowManager::WindowManager(std::string title) : window(nullptr) {
+WindowManager::WindowManager(std::string title, sf::Vector2u size) : window(nullptr) {
     if (globalWindowInstance != nullptr) {
         std::cout << "Failed to create window: Cannot create a window if one already exists.\n";
         return;
     }
 
-    window = new sf::RenderWindow(sf::VideoMode(1280, 720), title);
+    window = new sf::RenderWindow(sf::VideoMode(size.x, size.y), title);
     globalWindowInstance = this;
 
     clock = new sf::Clock();

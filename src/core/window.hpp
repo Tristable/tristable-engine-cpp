@@ -11,7 +11,7 @@ namespace tse {
         public:
             sf::Clock* clock;
 
-            WindowManager(std::string title);
+            WindowManager(std::string title, sf::Vector2u size);
             ~WindowManager();
 
             void start();
